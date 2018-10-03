@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
+
         targetRotation = transform.rotation;
         if (GetComponent<Rigidbody>())
         {
@@ -87,6 +89,15 @@ public class PlayerController : MonoBehaviour {
         jump();
 
         rBody.velocity = transform.TransformDirection(velocity);
+        if(rBody.position.y < -5)
+        {
+            resetPos();
+        }
+    }
+
+    private void resetPos()
+    {
+        
     }
 
     void run()
