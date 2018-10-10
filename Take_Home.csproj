@@ -310,9 +310,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\move.cs" />
+    <Compile Include="Assets\Player_Jumper.cs" />
     <Compile Include="Assets\Scripts\Button.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
+    <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\Platform_Moving.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>
