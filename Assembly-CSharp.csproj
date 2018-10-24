@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <None Include="Assets\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Unlit.shader" />
     <None Include="Assets\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Basic.shader" />
+    <None Include="Assets\CartoonPig\Model\CartoonPig.txt" />
     <None Include="Assets\Stylized Nature Environment\ReadMe.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/student/Documents/Unity/Take_Home/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

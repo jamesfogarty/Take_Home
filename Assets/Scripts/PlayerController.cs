@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform spawnPos;
+
     [System.Serializable]
     public class moveSettings
     {
@@ -14,6 +17,8 @@ public class PlayerController : MonoBehaviour {
         public float distToGrounded = 0.5f;
         public LayerMask ground;
         private int jumpCount = 0;
+        
+
     }
 
     [System.Serializable]
@@ -97,7 +102,7 @@ public class PlayerController : MonoBehaviour {
 
     private void resetPos()
     {
-        
+        player.transform.position = spawnPos.transform.position;
     }
 
     void run()
