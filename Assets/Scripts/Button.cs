@@ -18,7 +18,7 @@ public class Button : MonoBehaviour {
     {
         Debug.Log("Jump Higher");
         PlayerController current = player.GetComponent<PlayerController>();
-        current.moveSetting.jumpVelocity = 35;
+        current.moveSetting.jumpVelocity = 40;
     }
 
 }

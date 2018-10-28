@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private Transform player;
     [SerializeField] private Transform spawnPos;
 
+    public Animation anim;
+
     [System.Serializable]
     public class moveSettings
     {
@@ -60,7 +62,7 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
-
+        anim = GetComponent<Animation>();
         targetRotation = transform.rotation;
         if (GetComponent<Rigidbody>())
         {
@@ -107,12 +109,17 @@ public class PlayerController : MonoBehaviour {
 
     void run()
     {
-        if(Mathf.Abs(forwardInput) > inputSetting.inputDelay)
+        if (Mathf.Abs(forwardInput) > inputSetting.inputDelay)
         {
+            anim.Play("Run");
             velocity.z = moveSetting.forwardVel * forwardInput;
         }
         else
         {
+            if (grounded())
+            {
+                anim.Play("Idle");
+            }
             velocity.z = 0;
         }
     }
@@ -131,6 +138,7 @@ public class PlayerController : MonoBehaviour {
         if(jumpInput > 0 && grounded())
         {
             //Jump
+            anim.Play("Jump01");
             velocity.y = moveSetting.jumpVelocity;
         }
         else if(jumpInput == 0 && grounded())
@@ -145,5 +153,12 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.tag == "platform")
+    //    {
+    //        Debug.Log("Platform Hit");
+    //        player.transform.parent = transform;
+    //    }
+    //}
 }

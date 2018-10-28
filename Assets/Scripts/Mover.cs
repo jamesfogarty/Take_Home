@@ -54,9 +54,20 @@ public class Mover : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag);
         if (other.tag == "Player")
         {
             player.transform.parent = transform;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            player.transform.parent = null;
+        }
+    }
+
+
 }
