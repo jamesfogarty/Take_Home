@@ -8,6 +8,7 @@ TagManager:
   - Water
   - Pig
   - platform
+  - Chest
   layers:
   - Default
   - TransparentFX

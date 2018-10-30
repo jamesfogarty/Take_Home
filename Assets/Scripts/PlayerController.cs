@@ -153,12 +153,12 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.tag == "platform")
-    //    {
-    //        Debug.Log("Platform Hit");
-    //        player.transform.parent = transform;
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "platform")
+        {
+            Debug.Log("Platform Hit");
+            player.transform.parent = transform;
+        }
+    }
 }

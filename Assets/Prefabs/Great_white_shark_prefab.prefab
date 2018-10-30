@@ -594,6 +594,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4625965891aeb6840a1816645d00d4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 2
+  predator: 0
 --- !u!137 &137313421463016682
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
