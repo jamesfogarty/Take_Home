@@ -9,6 +9,7 @@ TagManager:
   - Pig
   - platform
   - Chest
+  - Button
   layers:
   - Default
   - TransparentFX

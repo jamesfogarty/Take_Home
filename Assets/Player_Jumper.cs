@@ -21,6 +21,6 @@ public class Player_Jumper : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Left");
+        Debug.Log("Left " + other.tag.ToString());
     }
 }

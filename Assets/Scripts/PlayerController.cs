@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag);
         if (other.tag == "platform")
         {
             Debug.Log("Platform Hit");

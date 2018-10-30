@@ -63,6 +63,7 @@ public class Mover : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Left Platform");
         if (other.tag == "Player")
         {
             player.transform.parent = null;
