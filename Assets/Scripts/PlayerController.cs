@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
         get { return targetRotation; }
     }
 
-    bool grounded()
+    public bool grounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, moveSetting.distToGrounded, moveSetting.ground);
     }
@@ -94,6 +94,11 @@ public class PlayerController : MonoBehaviour {
     {
         run();
         jump();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            moveSetting.jumpVelocity = 50;
+        }
 
         rBody.velocity = transform.TransformDirection(velocity);
         if(rBody.position.y < -5)
@@ -160,6 +165,10 @@ public class PlayerController : MonoBehaviour {
         {
             Debug.Log("Platform Hit");
             player.transform.parent = transform;
+        }
+        if(other.tag == "JumpReducer")
+        {
+            moveSetting.jumpVelocity = 20;
         }
     }
 }
