@@ -29,6 +29,7 @@ public class Croc : MonoBehaviour {
         if(distance < 30 && c.grounded())
         {
             anim.Play("Crocodile_walk");
+            //anim.Play("Crocodile_run");
             
             transform.LookAt(Player);
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;

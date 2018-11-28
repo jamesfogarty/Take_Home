@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour {
         public float distToGrounded = 0.5f;
         public LayerMask ground;
         private int jumpCount = 0;
-        
-
     }
 
     [System.Serializable]

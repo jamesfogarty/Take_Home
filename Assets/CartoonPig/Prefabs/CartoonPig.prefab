@@ -24,6 +24,7 @@ GameObject:
   m_Component:
   - component: {fileID: 411166}
   - component: {fileID: 11111164}
+  - component: {fileID: 114485514458022278}
   m_Layer: 0
   m_Name: CartoonPig
   m_TagString: Untagged
@@ -1455,3 +1456,32 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 111166}
   m_IsPrefabAsset: 1
+--- !u!114 &114485514458022278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a0ed73c45674d48852b9e58f7d12ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  spawnPos: {fileID: 0}
+  anim: {fileID: 0}
+  moveSetting:
+    forwardVel: 12
+    rotateVel: 100
+    jumpVelocity: 25
+    distToGrounded: 0.5
+    ground:
+      serializedVersion: 2
+      m_Bits: 0
+  phsSetting:
+    downAccel: 0.75
+  inputSetting:
+    inputDelay: 0.1
+    FORWARD_AXIS: Vertical
+    TURN_AXIS: Horizontal
+    JUMP_AXIS: Jump
