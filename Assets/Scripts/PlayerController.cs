@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -9,6 +11,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private Transform spawnPos;
 
     public Animation anim;
+    private AudioSource dying;
+
+    public Image life1, life2, life3;
+    private int lives;
 
     [System.Serializable]
     public class moveSettings
@@ -60,6 +66,7 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
+        lives = 3;
         anim = GetComponent<Animation>();
         targetRotation = transform.rotation;
         if (GetComponent<Rigidbody>())
@@ -92,17 +99,46 @@ public class PlayerController : MonoBehaviour {
     {
         run();
         jump();
-
         if (Input.GetKeyDown(KeyCode.R))
         {
             moveSetting.jumpVelocity = 50;
         }
 
-        rBody.velocity = transform.TransformDirection(velocity);
-        if(rBody.position.y < -5)
+        if (Input.GetKeyDown(KeyCode.Z))
         {
+            moveSetting.jumpVelocity = 20;
+        }
+      
+        rBody.velocity = transform.TransformDirection(velocity);
+        if(rBody.position.y < -10)
+        {
+            dying = GetComponent<AudioSource>();
+            dying.Play(0);        
+            lives--;
             resetPos();
         }
+
+        if(lives == 2)
+        {
+            Destroy(life3);
+        }
+        if(lives == 1)
+        {
+            Destroy(life2);
+        }
+        if(lives == 0)
+        {
+            Destroy(life3);
+        }
+        if(lives == -1)
+        {
+            gameOver();
+        }
+    }
+
+    private void gameOver()
+    {
+        SceneManager.LoadScene(4);
     }
 
     private void resetPos()
@@ -167,6 +203,14 @@ public class PlayerController : MonoBehaviour {
         if(other.tag == "JumpReducer")
         {
             moveSetting.jumpVelocity = 20;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Jumping"))
+        {
+            rBody.AddForce(0, moveSetting.jumpVelocity * 5, 0);
         }
     }
 }

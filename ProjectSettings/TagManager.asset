@@ -11,6 +11,8 @@ TagManager:
   - Chest
   - Button
   - JumpReducer
+  - Jumping
+  - Level_Finish
   layers:
   - Default
   - TransparentFX

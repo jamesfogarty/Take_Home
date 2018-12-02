@@ -17,6 +17,7 @@ public class Mover : MonoBehaviour {
     private float journeyLength;
     private float distCovered;
     private float fracJourney;
+
     void Start()
     {
         startTime = Time.time;
@@ -50,6 +51,7 @@ public class Mover : MonoBehaviour {
             }
             startTime = Time.time;
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
