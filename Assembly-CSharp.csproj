@@ -62,8 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Animal pack deluxe\Scripts\MoveCamera.cs" />
+    <Compile Include="Assets\destroy.cs" />
     <Compile Include="Assets\Level_End.cs" />
+    <Compile Include="Assets\next_Level.cs" />
     <Compile Include="Assets\PlayGame.cs" />
+    <Compile Include="Assets\QuitGame.cs" />
     <Compile Include="Assets\returnToMain.cs" />
     <Compile Include="Assets\Rotation.cs" />
     <Compile Include="Assets\Scripts\activate_button.cs" />
